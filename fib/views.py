@@ -7,8 +7,7 @@ from django.shortcuts import render
 class FibView(View):
     def get(self, request, *args, **kwargs):
         start = time.clock()
-        num = request.GET.get('number')
-        # validatiostrinh
+        num = request.GET.get('number', '')
         if num.isdigit():
             number = int(0 if num is None else num)
             result = self.fibonacci(number)
@@ -17,7 +16,7 @@ class FibView(View):
             fib_result = {'number': number, 'result': result, 'elapsed': elapsed}
             return render(request, 'fibonacci.html', {'fib_result': fib_result})
         else:
-            return HttpResponse("please enter valid number")
+            return render(request, 'fibonacci.html')
 
     def fibonacci(self, number):
         a = 1

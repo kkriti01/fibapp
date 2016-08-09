@@ -35,7 +35,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Fibonacci</a>
+            <a class="navbar-brand" href="{% url 'fib' %}">Fibonacci</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
           </div><!--/.nav-collapse -->
@@ -45,12 +45,7 @@
     <div class="container">
     {% bootstrap_messages %}
     {% block content %}
-    <form class="navbar-form navbar-right" method="get" action=".">
-            <div class="form-group">
-              <input type="text"  name="number" class="form-control" placeholder="Enter input N">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+
     {% endblock content%}
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
